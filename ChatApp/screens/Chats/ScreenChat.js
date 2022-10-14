@@ -27,7 +27,6 @@ const ScreenChat = () => {
   const onSend = useCallback((messages = []) => {
     const chatText = messages?.find(item => item._id);
     socket.emit('message', chatText?.text);
-    // setChatMessage('');
     setChatMsgArr(previousMessages =>
       GiftedChat.append(previousMessages, messages),
     );
